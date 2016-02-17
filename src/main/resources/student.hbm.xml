@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  
+   <class name="com.bellinfo.hibernate.Student" table="STUDENT" 
+   												schema="bellinfoschema">
+       <id name="id">
+        
+       </id>
+       <property name="name"/>
+       <property name="date"/>
+       <property name="course"/>
+       <property name="marks"/>
+   </class>
+
+</hibernate-mapping>        

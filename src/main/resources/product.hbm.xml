@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.bellinfo.hibernate.orm.association.Product" table="PRODUCT2">
+     <id name="pid" column="PRODUCT_ID">
+   <!--     <generator class="sequence">
+         <param name="sequence">product_seq</param>
+         </generator> -->
+     </id>
+     <property name="pName" column="PRODUCT_COLUMN" not-null="true"/>
+     <set name="parts" cascade="all">
+       <key column="PRODUCT_ID"></key>
+       <one-to-many class="com.bellinfo.hibernate.orm.association.Part"/>
+     </set>
+  </class>
+</hibernate-mapping>

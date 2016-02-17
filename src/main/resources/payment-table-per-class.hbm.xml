@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.bellinfo.hibernate.orm.inheritance.Payment" table="PAYMENT" schema="bellinfoschema">
+     <id name="paymentId" column="PAYMENT_ID">
+       <generator class="increment"/>
+     </id>
+   <discriminator column="PAYMENT_TYPE"  type="string"/>
+   <property name="amount" column="AMOUNT"/>
+     
+   <subclass name="com.bellinfo.hibernate.orm.inheritance.CreditCardPayment" discriminator-value="CREDIT">
+      <property name="ccNumber" column="CC_NUMBER"/>
+      <property name= "cccvv" column="CC_CVV"/>
+   </subclass>
+   
+   <subclass name="com.bellinfo.hibernate.orm.inheritance.ChequePayment" discriminator-value="CHEQE">
+      <property name="chequeNo" column="CHEQUE_NUMBER"/>
+      <property name= "chequeBy" column="CHEQUE_BY"/>
+   </subclass>
+   
+ </class>
+</hibernate-mapping>
+
+
+
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.bellinfo.hibernate.hql.Employee" table="EMPLOYEE_DETAILS">
+     <cache usage="read-only"/>
+     <id name="empId" column="EMP_ID">
+       <generator class="native">
+          <!-- <param name="sequence">hibernate_sequence</param> -->
+       </generator>
+     </id>
+     
+     <property name="empName" column="EMP_NAME" not-null="true"/>
+     <property name="empDept" column="EMP_DEPT" />
+     <property name="salary" column="EMP_SALARY" not-null="true"/>
+   </class>
+ </hibernate-mapping>
